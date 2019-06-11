@@ -1,10 +1,11 @@
 # how to test it ?
-#first input -> Enter --> file name  ex: input.txt
-#second input --> enter --> input string ex: engineering 
+#first input  --> file name  ex: input.txt
+#second input --> input string ex: engineering 
 
-# i think if we use KMP algorithm we can search for string in linear time but i found it useless because input string
-#max size is 100 char  so this algorithm has complexity O(100*n) so i think if we make it O(n)
-#wont make a different
+#Complexity : O(N*100) where N is the length of the string in the input file	
+#possible optimization : using kmp string matching algorithm
+#so the complexity would be reduced to O(N)
+#O(N*M) where M <= 100 so will approximately be O(N)
 
 
 
@@ -47,13 +48,13 @@ def read_chunck(filename,input_string):
       s = f.read(100)
       respone = search(input_string,s)
       if(respone == True):
-          print("Found")
+          print("Yes")
           flag=1
           break
       if not s:
           break;
   if flag ==0:
-      print("NOT FOUND")
+      print("False")
 
 
 
