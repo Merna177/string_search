@@ -1,9 +1,13 @@
 index = 0;
+remaining_string = ""
 def search(input_string,string_file):
     window_size= len(input_string)
     start=0
     global index
-    index_of_string=0
+    global  remaining_string
+
+    index_of_string=index
+    string_file = remaining_string + string_file
     while index < window_size and index_of_string < len(string_file):
         if input_string[index] == string_file[index_of_string]:
             index+=1
@@ -15,6 +19,7 @@ def search(input_string,string_file):
             index_of_string=start
         if(index == window_size):
             return True
+    remaining_string = string_file[len(string_file)-index:]
 
     return False
 
